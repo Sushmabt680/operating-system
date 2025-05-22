@@ -2,11 +2,11 @@
 
 int main() {
     int n, frames, i, j, p, found, index = 0, page_faults = 0, hit = 0;
+char pages[100];
 
     printf("Enter the size of the page : ");
     scanf("%d", &n);
 
-    char pages[n];
     printf("Enter the page string: ");
     scanf("%s", pages);
 
