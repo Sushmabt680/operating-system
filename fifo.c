@@ -3,11 +3,11 @@
 int main() {
     int n, frames, i, j, p, found, index = 0, page_faults = 0, hit = 0;
 
-    printf("Enter the size of the page reference string (n): ");
+    printf("Enter the size of the page : ");
     scanf("%d", &n);
 
     char pages[n];
-    printf("Enter the page reference string: ");
+    printf("Enter the page string: ");
     scanf("%s", pages);
 
     printf("Enter the number of page frames: ");
@@ -23,7 +23,7 @@ int main() {
         found = 0;
 
         for (j = 0; j < frames; j++) {
-            if (mem[j] == pages[i]) {
+            if (mem[j] == pages[i]-0) {
                 hit++;
                 found = 1;
                 break;
@@ -32,7 +32,7 @@ int main() {
 
 
         if (!found) {
-            mem[index] = pages[i];
+            mem[index] = pages[i]-0;
             index = (index + 1) % frames;
             page_faults++;
     }
