@@ -20,10 +20,11 @@ char pages[100];
     }
 
     for (i = 0; i < n; i++) {
+        int current_page=pages[i]-'0';
         found = 0;
 
         for (j = 0; j < frames; j++) {
-            if (mem[j] == pages[i]-0) {
+            if (mem[j] == current_page) {
                 hit++;
                 found = 1;
                 break;
@@ -32,14 +33,13 @@ char pages[100];
 
 
         if (!found) {
-            mem[index] = pages[i]-0;
+            mem[index] = current_page;;
             index = (index + 1) % frames;
             page_faults++;
-    }
+        }
 
     printf("Page faults: %d \n", page_faults);
     printf("Page hits: %d\n", hit);
 
     return 0;
-}
-
+    }
